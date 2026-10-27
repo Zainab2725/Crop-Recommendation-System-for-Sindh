@@ -1,0 +1,15 @@
+check_name,category,value,expected,status,notes
+Row count reconciliation,STRUCTURAL,"source=3242, included=3223, excluded=19",included + excluded == source,PASS,
+Duplicate district-crop-year keys in dataset,STRUCTURAL,0,0,PASS,
+Every excluded row appears in exclusion ledger,COMPLETENESS,"excluded=19, in_ledger=19",All excluded rows in ledger,PASS,
+No excluded row silently lost,COMPLETENESS,"source=3242, included+excluded=3242",source == included + excluded,PASS,
+Source CSV hash unchanged after processing,INTEGRITY,b7362d3154c42738191690b8f73add9e9c0ed9850891891ea91fb137bffc13ff,b7362d3154c42738191690b8f73add9e9c0ed9850891891ea91fb137bffc13ff,PASS,
+Source PDF hash unchanged after processing,INTEGRITY,293d3bfcf26fff75f2df7156e11e3fbea25707d7473f91f4d952018c250b7d13,293d3bfcf26fff75f2df7156e11e3fbea25707d7473f91f4d952018c250b7d13,PASS,
+Historical Thatta rice reference file traceable,PROVENANCE,"present=True, rows=28","present=True, rows=28",PASS,Stored separately in reports/phase3d/thatta_rice_verified.csv
+Sujawal Rice fully excluded from research_dataset,EXCLUSION,remaining_in_dataset=0,0,PASS,All 19 Sujawal Rice rows in exclusion ledger
+Historical Thatta rice NOT auto-merged into research_dataset,EXCLUSION,thatta_rice_rows_in_dataset=0,0 (from PDF source — stored separately),PASS,"Dataset has 0 Thatta Rice rows from PBS API source (these are the API rows, which return 0 for Thatta from the portal — Thatta Rice is absent from the PBS API entirely). PDF-sourced Thatta rice is in reports/phase3d/thatta_rice_verified.csv."
+solar_mean missing rows (legitimate satellite gap),MISSINGNESS,141,<=141 (only 1981-1983 years),PASS,NASA SRB satellite data begins mid-1983. Gaps expected.
+Soil features missing (14 districts have no soil data),MISSINGNESS,1817,">0 (structural gap, 14 districts)",INFO,10 of 24 districts have soil data; 14 districts fully missing.
+"Area missing (only Sujawal Rice 2022-23, excluded in E1)",MISSINGNESS,0,0 (after E1 exclusion of Sujawal Rice),PASS,Sujawal Rice 2022-23 had missing Area — that row is excluded (E1). No other rows have missing Area.
+Cotton unit heterogeneity flagged,UNIT_INTEGRITY,607 Cotton rows flagged,>0,PASS,"Cotton Production is in '000 Bales (170.097 kg each), not metric tonnes. Converted values stored in cotton_prod_k_tonnes and cotton_yield_t_ha columns."
+"Zero production with non-zero area (retained, not excluded)",ANOMALY_FLAGS,25,>0 (genuine failures including 2022 floods),PASS,These records are retained with flag_zero_prod_nonzero_area=True per conservative rules.

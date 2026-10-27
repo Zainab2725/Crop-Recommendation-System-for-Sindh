@@ -1,0 +1,25 @@
+District,Total_Records,Soil_Records_Present,Soil_Coverage_Status,Unique_Soil_Profiles,Temporal_Variation
+Badin,176,176,COMPLETE,1,STATIC (0 variance)
+Dadu,214,214,COMPLETE,1,STATIC (0 variance)
+Ghotki,135,135,COMPLETE,1,STATIC (0 variance)
+Hyderabad,218,218,COMPLETE,1,STATIC (0 variance)
+Jacobabad,107,0,ABSENT,0,NO_DATA
+Jamshoro,86,0,ABSENT,0,NO_DATA
+Kambar Shahdad Kot,54,54,COMPLETE,1,STATIC (0 variance)
+Karachi Central,41,0,ABSENT,0,NO_DATA
+Kashmore,64,0,ABSENT,0,NO_DATA
+Khairpur,183,0,ABSENT,0,NO_DATA
+Larkana,158,0,ABSENT,0,NO_DATA
+Matiari,83,0,ABSENT,0,NO_DATA
+Mirpur Khas,148,0,ABSENT,0,NO_DATA
+Naushahro Feroze,159,0,ABSENT,0,NO_DATA
+Sanghar,210,210,COMPLETE,1,STATIC (0 variance)
+Shaheed Benazirabad,211,0,ABSENT,0,NO_DATA
+Shikarpur,192,0,ABSENT,0,NO_DATA
+Sujawal,19,19,COMPLETE,1,STATIC (0 variance)
+Sukkur,214,0,ABSENT,0,NO_DATA
+Tando Allahyar,79,0,ABSENT,0,NO_DATA
+Tando Muhammad Khan,92,0,ABSENT,0,NO_DATA
+Tharparkar,131,131,COMPLETE,1,STATIC (0 variance)
+Thatta,172,172,COMPLETE,1,STATIC (0 variance)
+Umer Kot,96,96,COMPLETE,1,STATIC (0 variance)
